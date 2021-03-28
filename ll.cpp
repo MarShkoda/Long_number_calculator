@@ -24,13 +24,13 @@ bool operator >(const ll& lval, const ll& rval)
  * Сравнивает последовательно сначала знаки чисел, потом их длину, потом начиная с наибольшего сравнивает их посимвольно
  * Зависит от операторов > и !=
  * Асимптотика по времени - O(n), константа асимптотики 2
- * Асимптотика по памяти - O(1), константа асимптотики 4
+ * Асимптотика по памяти - O(1), константа асимптотики 2
  * \param lval const ll& левое число
  * \param rval const ll& правое число
  * \return bool true, если левое меньше правого, иначе false
  */
  bool operator < (const ll& lval, const ll& rval)
-{   return (!(lval>rval) && lval!=rval);
+{   return rval>lval;
 }
 
 template<typename T>
@@ -55,4 +55,28 @@ template<typename T>
 bool operator <(const ll& lval, const T& rval)
 {   ll rv(rval);
     return lval<rv;
+}
+
+bool operator ==(const ll &lval, const ll &rval){
+
+    if (lval.sign != rval.sign){
+        return false;// не равны
+    }
+    else{
+        unsigned int len1 = lval.num.size();
+        if (len1 != rval.num.size()) return false; // не равны
+        else{
+            for (unsigned int i = 0; i<len1; i++){
+                if (lval.num[i] != rval.num[i]){
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+}
+
+bool operator !=(const ll& lval, const ll& rval){
+    return !(lval == rval);
 }
