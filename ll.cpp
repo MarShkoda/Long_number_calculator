@@ -5,3 +5,4 @@ namespace power{
 }
 
 ll::ll(): sign{ true }, num{ 0 }{};
+ll::ll(int to): sign{ to < 0 }, num{ {to % power::mod, to / power::mod} }{};
