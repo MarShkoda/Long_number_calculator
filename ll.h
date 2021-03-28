@@ -16,8 +16,16 @@ public:
     ll operator -();
     friend bool operator ==(const ll &lval, const ll &rval);
     friend bool operator < (const ll& lval, const ll& rval);
-    friend bool operator !=(const ll& lval, const ll& rval);
+    template <typename T>
+    friend bool operator < (const ll& lval, const T&  rval);
+    template <typename T>
+    friend bool operator < (const T&  lval, const ll& rval);
     friend bool operator > (const ll& lval, const ll& rval);
+    template <typename T>
+    friend bool operator > (const ll& lval, const T&  rval);
+    template <typename T>
+    friend bool operator > (const T&  lval, const ll& rval);
+    friend bool operator !=(const ll& lval, const ll& rval);
     friend bool operator >=(const ll& lval, const ll& rval);
     friend bool operator <=(const ll& lval, const ll& rval);
     friend ll operator +(const ll& lval, const ll& rval);       //Z-6
