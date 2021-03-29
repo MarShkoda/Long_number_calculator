@@ -4,5 +4,17 @@ namespace power{
     const int mod = 1000000000;
 }
 
-ll::ll(): sign{ true }, num{ 0 }{};
-ll::ll(int to): sign{ to < 0 }, num{ {to % power::mod, to / power::mod} }{};
+ll::ll(): sign{ false }, num{ 0 }{};
+ll::ll(int to): sign{ to < 0 }{
+    if (sign) to *= -1;
+    num.push_back(to % power::mod);
+    num.push_back(to / power::mod);
+};
+ll::ll(long long to): sign{ to < 0 }{
+    if (sign) to *= -1;
+    num.push_back(to % power::mod);
+    to /= power::mod;
+    num.push_back(to % power::mod);
+    num.push_back(to / power::mod);
+};
+ll::ll(bool sigN, std::vector<long long> nuM): sign{ sigN }, num{ nuM }{};
