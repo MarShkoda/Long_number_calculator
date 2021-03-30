@@ -1,5 +1,6 @@
 #include "ll.h"
 
+<<<<<<< HEAD
 /**\brief оператор > дл€ двух ll чисел
  * —равнивает последовательно сначала знаки чисел, потом их длину, потом начина€ с наибольшего сравнивает их посимвольно
  * Ќе зависит от других функций и операторов
@@ -99,4 +100,32 @@ short ll::poz()
 {   if (this->num[0] == 0) return 0;
     else if (this->sign) return 1;
     else if (!this->sign) return 2;
+=======
+namespace power{
+    const int mod = 1000000000;
 }
+
+ll::ll(): sign{ false }, num{ 0 }{};
+ll::ll(int to): sign{ to < 0 }{
+    if (sign) to *= -1;
+    num.push_back(to % power::mod);
+    num.push_back(to / power::mod);
+};
+ll::ll(long long to): sign{ to < 0 }{
+    if (sign) to *= -1;
+    num.push_back(to % power::mod);
+    to /= power::mod;
+    num.push_back(to % power::mod);
+    num.push_back(to / power::mod);
+};
+ll::ll(std::string to){
+    long long digit = std::stoll(to);
+    sign = (digit<0)? true:false; 
+    if(sign) digit *= -1;
+    num.push_back(digit % power::mod);
+    digit /= power::mod;
+    num.push_back(digit % power::mod);
+    num.push_back(digit / power::mod);
+>>>>>>> 007a797e51de6348564d3995006ef4f70148a4e6
+}
+ll::ll(bool sigN, std::vector<long long> nuM): sign{ sigN }, num{ nuM }{};
