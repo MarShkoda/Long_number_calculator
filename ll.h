@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+
 class ll
 {
 private:
@@ -14,6 +15,12 @@ public:
     ll(long long to);
     ll(std::string to);
     ll(bool sigN, std::vector<long long> nuM);
+    std::vector<long long> getVec(){
+        return num;
+    };
+    bool getSign(){
+        return sign;
+    };
     ll operator -();
     friend bool operator ==(const ll &lval, const ll &rval);
     friend bool operator < (const ll& lval, const ll& rval);
