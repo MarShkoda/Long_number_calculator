@@ -1,13 +1,13 @@
 #include "ll.h"
 
-/**\brief оператор > для двух ll чисел
- * Сравнивает последовательно сначала знаки чисел, потом их длину, потом начиная с наибольшего сравнивает их посимвольно
- * Не зависит от других функций и операторов
- * Асимптотика по времени - O(n), константа асимптотики 2
- * Асимптотика по памяти - O(1), константа асимптотики 3
- * \param lval const ll& левое число
- * \param rval const ll& правое число
- * \return bool true, если левое больше правого, иначе false
+/**\brief пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ > пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ ll пїЅпїЅпїЅпїЅпїЅ
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+ * пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - O(n), пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ - O(1), пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3
+ * \param lval const ll& пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+ * \param rval const ll& пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+ * \return bool true, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ false
  */
 bool operator >(const ll& lval, const ll& rval)
 {   if (lval.sign!=rval.sign)
@@ -21,14 +21,104 @@ bool operator >(const ll& lval, const ll& rval)
             return (lval.num[i]>rval.num[i])^lval.sign;
     return 0;
 }
-/**\brief оператор < для двух ll чисел
- * Сравнивает последовательно сначала знаки чисел, потом их длину, потом начиная с наибольшего сравнивает их посимвольно
- * Зависит от операторов > и !=
- * Асимптотика по времени - O(n), константа асимптотики 2
- * Асимптотика по памяти - O(1), константа асимптотики 3
- * \param lval const ll& левое число
- * \param rval const ll& правое число
- * \return bool true, если левое меньше правого, иначе false
- */bool operator < (const ll& lval, const ll& rval)
-{   return (!(lval>rval) && lval!=rval);
+/**\brief пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ < пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ ll пїЅпїЅпїЅпїЅпїЅ
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ > пїЅ !=
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - O(n), пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ - O(1), пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3
+ * \param lval const ll& пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+ * \param rval const ll& пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+ * \return bool true, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ false
+ */
+bool operator < (const ll& lval, const ll& rval)
+{   
+    return (!(lval>rval) && lval!=rval);
+}
+
+std::ostream& operator<< (std::ostream& out, const ll& val)
+{
+    bool k = false;
+    if (val.sign == 1) out << '-';
+    for (int i = val.num.size() - 1; i >= 0; i--)
+    {
+        if (val.num[i] != 0 || k)
+        {
+            int h = 0;
+            for (long long x = val.num[i]; x > 0; x /= 10, h++);
+            if (k) for (int i = 0; i < 9 - h; i++) out << '0';
+            if (val.num[i] != 0) out << val.num[i];
+        }
+        if (val.num[i] != 0) k = true;
+    }
+    return out;
+}
+
+void fft(std::vector<std::complex<long double>>& to, bool invert)
+{
+    int n = to.size();
+    if (n == 1) return;
+    std::vector<std::complex<long double>> a0(n / 2), a1(n / 2);
+    for (int i = 0; i < n; i += 2)
+    {
+        a0[i / 2] = to[i];
+        a1[i / 2] = to[i + 1];
+    }
+    fft(a0, invert);
+    fft(a1, invert);
+    long double fi = 2 * power::PI / n * (invert == 1 ? -1 : 1);
+    std::complex<long double> p(1), key(cos(fi), sin(fi));
+    for (int i = 0; i < n / 2; i++)
+    {
+        to[i] = a0[i] + p * a1[i];
+        to[i + n / 2] = a0[i] - p * a1[i];
+        if (invert == 1)
+        {
+            to[i] /= 2;
+            to[i + n / 2] /= 2;
+        }
+        p *= key;
+    }
+}
+
+ll operator *(const ll& lval, const ll& rval)
+{
+    std::vector<long long> l_val, r_val;
+    for (int i = 0; i < std::max(lval.num.size(), rval.num.size()); i++)
+    {
+        if(i < static_cast<int>(lval.num.size()))
+        {
+            l_val.push_back(lval.num[i] % 1000);
+            l_val.push_back(lval.num[i] / 1000 % 1000);
+            l_val.push_back(lval.num[i] / 1000000);
+        }
+        if (i < static_cast<int>(rval.num.size()))
+        {
+            r_val.push_back(rval.num[i] % 1000);
+            r_val.push_back(rval.num[i] / 1000 % 1000);
+            r_val.push_back(rval.num[i] / 1000000);
+        }
+    }
+    int n = 1;
+    for (; n <= static_cast<int>(std::max(l_val.size(), r_val.size())); n <<= 1);
+    n <<= 1;
+    l_val.resize(n);
+    r_val.resize(n);
+    std::vector< std::complex<long double> > flval(l_val.begin(), l_val.end()), frval(r_val.begin(), r_val.end());
+    fft(flval, false);
+    fft(frval, false);
+    for (int i = 0; i < n; i++) flval[i] *= frval[i];
+    fft(flval, true);
+    std::vector<long long> ans(n), ansy;
+    for (int i = 0; i < n; i++) ans[i] = static_cast<long long>(flval[i].real() + 0.5);
+    for (int i = 0; i < n - 1; i++)
+    {
+        ans[i + 1] += ans[i] / 1000;
+        ans[i] %= 1000;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        if (i % 3 == 0) ansy.push_back(ans[i]);
+        else ansy[i / 3] += pow(1000, i % 3) * ans[i];
+    }
+    return ll(lval.sign^rval.sign, ansy);
 }
